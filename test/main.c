@@ -9,6 +9,7 @@ int main(void)
  printf("Enter the number of columns:");
  scanf("%d",&m);              
  int arr[n][m];
+ printf("Enter the elements:\n");
  for(int i=0;i<n;i++)
  {
    for(int j=0;j<m;j++)
