@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include <stdlib.h>
-//m=rows, n=columns
+
 void transpose(int *arr, int n, int m) 
 { 
     int i, j; 
