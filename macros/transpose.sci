@@ -1,5 +1,5 @@
 function [y] = transpose()
-    //   Calls a multiplication function defined in C with given inputs and returns the expected result
+    //   Calls a transpose function defined in C with given inputs and returns the expected result
     //
     //   Syntax
     //   y = transpose(in1[])
