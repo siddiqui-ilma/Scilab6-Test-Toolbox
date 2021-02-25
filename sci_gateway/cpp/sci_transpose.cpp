@@ -44,19 +44,9 @@ int sci_transpose(scilabEnv env, int nin, scilabVar* in, int nopt, scilabOpt* op
 
     scilab_getDoubleArray(env, out[0], &out1);
    
-    if(row1!=col1)
-    {
-        for (i = 0; i < col1; ++i)
-        {
-              for(j = 0; j<row1; ++j)      
-                      out1[i*row1+j] = ar[j*col1+i];
-        }
-    }
-    else
-    {
-          for(i=0; i<size1; i++)
+     for(i=0; i<size1; i++)
               out1[i] = ar[i];
-     }
+     
 
     return 0;
 }
