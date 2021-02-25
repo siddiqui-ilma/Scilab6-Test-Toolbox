@@ -11,6 +11,7 @@ static const char fname[] = "transpose";
 int sci_transpose(scilabEnv env, int nin, scilabVar* in, int nopt, scilabOpt* opt, int nout, scilabVar* out)
 {
     int i = 0;
+    int j = 0;
     int row1 = 0;
     int col1 = 0;
     int size1 = 0;
@@ -42,11 +43,20 @@ int sci_transpose(scilabEnv env, int nin, scilabVar* in, int nopt, scilabOpt* op
     out[0] = scilab_createDoubleMatrix2d(env, col1, row1, 0);
 
     scilab_getDoubleArray(env, out[0], &out1);
-
-    for (i = 0; i < size1; ++i)
+   
+    if(row1!=col1)
     {
-        out1[i] = ar[i];
+        for (i = 0; i < col1; ++i)
+        {
+              for(j = 0; j<row1; ++j)      
+                      out1[i*row1+j] = ar[j*col1+i];
+        }
     }
+    else
+    {
+          for(i=0; i<size1; i++)
+              out1[i] = ar[i];
+     }
 
     return 0;
 }
